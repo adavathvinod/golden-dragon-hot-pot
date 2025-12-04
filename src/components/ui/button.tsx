@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -15,11 +15,17 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Restaurant premium variants
+        gold: "bg-gradient-to-r from-gold-dark via-gold to-gold-dark text-background font-semibold tracking-wide hover:shadow-[0_0_30px_hsl(43_56%_52%_/_0.4)] hover:scale-105",
+        crimson: "bg-gradient-to-r from-crimson-dark via-crimson to-crimson-dark text-primary-foreground font-semibold tracking-wide hover:shadow-[0_0_30px_hsl(0_100%_33%_/_0.5)] hover:scale-105",
+        hero: "bg-transparent border-2 border-gold text-gold font-semibold tracking-wider hover:bg-gold hover:text-background",
+        heroFilled: "bg-primary border-2 border-primary text-primary-foreground font-semibold tracking-wider hover:bg-crimson-light hover:border-crimson-light hover:shadow-[0_0_30px_hsl(0_100%_33%_/_0.5)]",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-md px-10 text-base",
         icon: "h-10 w-10",
       },
     },
